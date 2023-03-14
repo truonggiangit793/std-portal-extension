@@ -1,0 +1,36 @@
+{
+    "name": "TDTU Student Portal",
+    "version": "23.3.14",
+    "manifest_version": 3,
+    "author": "Truong Giang",
+    "minimum_chrome_version": "80",
+    "description": "Ton Duc Thang University Student Portal!",
+    "permissions": ["tabs"],
+    "host_permissions": ["https://*.tdtu.edu.vn/*"],
+    "background": { "service_worker": "background.js" },
+    "content_scripts": [
+        {
+            "matches": ["https://*.tdtu.edu.vn/*"],
+            "js": ["content.js"],
+            "css": ["style.css"]
+        }
+    ],
+    "icons": {
+        "16": "logo.png",
+        "32": "logo.png",
+        "48": "logo.png",
+        "64": "logo.png",
+        "128": "logo.png"
+    },
+    "action": {
+        "default_title": "TDTU Student Portal",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "logo.png",
+            "32": "logo.png",
+            "48": "logo.png",
+            "64": "logo.png",
+            "128": "logo.png"
+        }
+    }
+}
