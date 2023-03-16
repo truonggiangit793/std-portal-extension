@@ -1,6 +1,6 @@
 {
     "name": "TDTU Student Portal",
-    "version": "23.3.14",
+    "version": "23.3.16",
     "manifest_version": 3,
     "author": "Truong Giang",
     "minimum_chrome_version": "80",

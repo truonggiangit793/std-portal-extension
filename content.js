@@ -126,6 +126,11 @@
                     thumbnail: "https://cdn-icons-png.flaticon.com/512/9979/9979251.png",
                     link: "https://studentnews.tdtu.edu.vn/Home/Index",
                 },
+                {
+                    name: "Password",
+                    thumbnail: "https://cdn-icons-png.flaticon.com/512/3176/3176329.png",
+                    link: "https://stdportal.tdtu.edu.vn/main/thongtinsinhvien/doimatkhau",
+                },
             ],
         },
         {
