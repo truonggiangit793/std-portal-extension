@@ -130,7 +130,6 @@ div.std_card {
     border: 1px solid rgba(255, 255, 255, 0.39);
     background: rgb(255 255 255 / 20%);
     backdrop-filter: blur(10px);
-    /* box-shadow: 2px 4px 12px -4px rgb(0 0 0 / 20%); */
     box-shadow: 0px 8px 20px -4px rgb(0 0 0 /30%);
     transition: all 0.2s linear;
 }

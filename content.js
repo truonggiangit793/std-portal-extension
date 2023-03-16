@@ -53,6 +53,53 @@
         };
     };
 
+    const getRandomQuotes = function () {
+        const quotesArray = [
+            "Welcome back to the student portal! It's great to have you here again. Let's continue your educational journey and achieve your goals together. Hope you have a nice day!",
+            "“We cannot solve problems with the kind of thinking we employed when we came up with them.” — Albert Einstein",
+            "“Learn as if you will live forever, live like you will die tomorrow.” — Mahatma Gandhi",
+            "“Stay away from those people who try to disparage your ambitions. Small minds will always do that, but great minds will give you a feeling that you can become great too.” — Mark Twain",
+            "“When you give joy to other people, you get more joy in return. You should give a good thought to happiness that you can give out.”— Eleanor Roosevelt",
+            "“When you change your thoughts, remember to also change your world.”—Norman Vincent Peale",
+            "“It is only when we take chances, when our lives improve. The initial and the most difficult risk that we need to take is to become honest. —Walter Anderson",
+            "“Nature has given us all the pieces required to achieve exceptional wellness and health, but has left it to us to put these pieces together.”—Diane McLaren",
+            '"Success is not final; failure is not fatal: It is the courage to continue that counts." — Winston S. Churchill',
+            '"It is better to fail in originality than to succeed in imitation." — Herman Melville',
+            '"The road to success and the road to failure are almost exactly the same." — Colin R. Davis',
+            "“Success usually comes to those who are too busy looking for it.” — Henry David Thoreau",
+            "“Develop success from failures. Discouragement and failure are two of the surest stepping stones to success.” —Dale Carnegie",
+            "“There are three ways to ultimate success: The first way is to be kind. The second way is to be kind. The third way is to be kind.” —Mister Rogers",
+            "“Success is peace of mind, which is a direct result of self-satisfaction in knowing you made the effort to become the best of which you are capable.” —John Wooden",
+            "“I never dreamed about success. I worked for it.” —Estée Lauder",
+            "“Success is getting what you want, happiness is wanting what you get.” ―W. P. Kinsella",
+            '“The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty." — Winston Churchill',
+            "“Don’t let yesterday take up too much of today.” — Will Rogers",
+            "“You learn more from failure than from success. Don’t let it stop you. Failure builds character.” — Unknown ",
+            "“If you are working on something that you really care about, you don’t have to be pushed. The vision pulls you.” — Steve Jobs",
+            "“Experience is a hard teacher because she gives the test first, the lesson afterwards.” ―Vernon Sanders Law",
+            "“To know how much there is to know is the beginning of learning to live.” —Dorothy West",
+            "“He who conquers himself is the mightiest warrior.” — Confucius",
+            "“Try not to become a man of success, but rather become a man of value.” – Albert Einstein",
+            "“One secret of success in life is for a man to be ready for his opportunity when it comes.” – Benjamin Disraeli",
+            "“A man who has committed a mistake and doesn’t correct it is committing another mistake.” – Confucius Kongzi",
+            "“The successful man will profit from his mistakes and try again in a different way.” – Dale Carnegie",
+            "“A successful man is one who can lay a firm foundation with the bricks others have thrown at him.” – David Brinkley",
+            "“You've got to get up every morning with determination if you're going to go to bed with satisfaction.” — George Lorimer",
+            "“Education is the most powerful weapon which you can use to change the world.” — Nelson Mandela",
+            "“The greatest discovery of my generation is that a human being can alter his life by altering his attitudes.” — William James",
+            "“One of the differences between some successful and unsuccessful people is that one group is full of doers, while the other is full of wishers.” — Edmond Mbiaka",
+            "“I’d rather regret the things I’ve done than regret the things I haven’t done.” —Lucille Ball",
+            "“Life is like riding a bicycle. To keep your balance you must keep moving.” —Albert Einstein",
+            "“What you do speaks so loudly that I cannot hear what you say.” —Ralph Waldo Emerson",
+            "“I have never let my schooling interfere with my education.” —Mark Twain",
+            "“If you can't yet do great things, do small things in a great way.” ―Napoleon Hill",
+            "“Be sure you put your feet in the right place, then stand firm.” ―Abraham Lincoln",
+            "“The greater the difficulty, the more the glory in surmounting it.” ―Epicurus",
+            "“If the decisions you make about where you invest your blood, sweat, and tears are not consistent with the person you aspire to be, you’ll never become that person.” ―Clayton M. Christensen",
+        ];
+        return quotesArray[Math.floor(Math.random() * quotesArray.length)];
+    };
+
     const backgroundImageRandom = function () {
         const list = [
             "https://images.unsplash.com/photo-1659878997289-b9ab5a0663b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Z2xhc3Ntb3JwaGlzbXxlbnwwfHwwfHw%3D&w=1000&q=80",
@@ -259,7 +306,7 @@
         if (!mainContainer) return;
         isAccessibleInstallElement({ tagName: "div", id: "std-sub-header" }, function (err, subHeaderElement) {
             if (err) return;
-            const quote = `Welcome back to the student portal! It's great to have you here again. Let's continue your educational journey and achieve your goals together. Hope you have a nice day!`;
+            const quote = getRandomQuotes();
             const svgAvatarFrame = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185 196" aria-hidden="true" class="profile-background"><defs><path id="f94b451435b3a97a03f35aa6ed7b79c0b" d="M0 0h185v196H0z"></path><path d="M133.685 175C162.38 175 185 153.618 185 127.246c0-19.838-11.668-36.944-29.884-45.021C154.997 40.173 124.636 10 85.823 10c-25.36 0-43.575 13.305-55.243 29.341-23.336-6.058-48.457 11.285-49.172 37.776C-40.022 80.917-53 100.28-53 123.327c0 27.796 24.526 51.554 57.149 51.554l129.536.119z" id="f94b451435b3a97a03f35aa6ed7b79c0e"></path><linearGradient x1="19.823%" y1="45.17%" x2="-1.128%" y2="45.17%" id="f94b451435b3a97a03f35aa6ed7b79c0a"><stop stop-color="#FFF" offset="0%"></stop><stop stop-color="#FFF" stop-opacity="0" offset="100%"></stop></linearGradient><filter x="-4.6%" y="-6.7%" width="109.2%" height="113.3%" filterUnits="objectBoundingBox" id="f94b451435b3a97a03f35aa6ed7b79c0d"><feGaussianBlur stdDeviation="6.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur><feOffset dy="9" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.133002328 0" in="shadowInnerInner1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><mask id="f94b451435b3a97a03f35aa6ed7b79c0c" fill="url(#f94b451435b3a97a03f35aa6ed7b79c0a)"><use xlink:href="#f94b451435b3a97a03f35aa6ed7b79c0b"></use></mask><g fill-rule="nonzero" mask="url(#f94b451435b3a97a03f35aa6ed7b79c0c)" fill="#000"><use filter="url(#f94b451435b3a97a03f35aa6ed7b79c0d)" xlink:href="#f94b451435b3a97a03f35aa6ed7b79c0e"></use></g></g></svg>`;
             const staticImage = createElement("div", { class: "static-avatar", style: `background: url('${getStudentInfo()?.avatar}') no-repeat center; background-size: cover` });
             const profileAvatar = createElement("div", { class: "profile-avatar", style: "top: 30px" });
