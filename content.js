@@ -53,6 +53,27 @@
         };
     };
 
+    const backgroundImageRandom = function () {
+        const list = [
+            "https://images.unsplash.com/photo-1659878997289-b9ab5a0663b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Z2xhc3Ntb3JwaGlzbXxlbnwwfHwwfHw%3D&w=1000&q=80",
+            "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
+            "https://images.unsplash.com/photo-1618005198920-f0cb6201c115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80",
+            "https://images.unsplash.com/photo-1661783758573-e1fac356dba2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2029&q=80",
+            "https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80",
+            "https://images.unsplash.com/photo-1641579281152-e5d633aa3775?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
+            "https://images.unsplash.com/photo-1632373564036-cc8b7ce520c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
+            "https://images.unsplash.com/photo-1626544827763-d516dce335e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2467&q=80",
+            "https://images.unsplash.com/photo-1627163439134-7a8c47e08208?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
+            "https://images.unsplash.com/photo-1666115883766-efa38b52630c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
+            "https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
+            "https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80",
+            "https://images.unsplash.com/photo-1618172193763-c511deb635ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80",
+        ];
+        return list[Math.floor(Math.random() * list.length)];
+    };
+
     const menuSections = [
         {
             sectionName: "Education",
@@ -236,30 +257,33 @@
         UI.installContainer();
         const mainContainer = UI.getMainContainer();
         if (!mainContainer) return;
-        isAccessibleInstallElement({ tagName: "div", id: "std-sub-header" }, function (err, subHeader) {
+        isAccessibleInstallElement({ tagName: "div", id: "std-sub-header" }, function (err, subHeaderElement) {
             if (err) return;
-            setStyleForElement(subHeader, { display: "flex", justifyContent: "space-between", marginBottom: "40px", padding: "40px" });
-            subHeader.innerHTML = `
-                <div class="std-info-card">
-                    <div class="profile-avatar" style="top: 30px">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185 196" aria-hidden="true" class="profile-background"><defs><path id="f94b451435b3a97a03f35aa6ed7b79c0b" d="M0 0h185v196H0z"></path><path d="M133.685 175C162.38 175 185 153.618 185 127.246c0-19.838-11.668-36.944-29.884-45.021C154.997 40.173 124.636 10 85.823 10c-25.36 0-43.575 13.305-55.243 29.341-23.336-6.058-48.457 11.285-49.172 37.776C-40.022 80.917-53 100.28-53 123.327c0 27.796 24.526 51.554 57.149 51.554l129.536.119z" id="f94b451435b3a97a03f35aa6ed7b79c0e"></path><linearGradient x1="19.823%" y1="45.17%" x2="-1.128%" y2="45.17%" id="f94b451435b3a97a03f35aa6ed7b79c0a"><stop stop-color="#FFF" offset="0%"></stop><stop stop-color="#FFF" stop-opacity="0" offset="100%"></stop></linearGradient><filter x="-4.6%" y="-6.7%" width="109.2%" height="113.3%" filterUnits="objectBoundingBox" id="f94b451435b3a97a03f35aa6ed7b79c0d"><feGaussianBlur stdDeviation="6.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur><feOffset dy="9" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.133002328 0" in="shadowInnerInner1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><mask id="f94b451435b3a97a03f35aa6ed7b79c0c" fill="url(#f94b451435b3a97a03f35aa6ed7b79c0a)"><use xlink:href="#f94b451435b3a97a03f35aa6ed7b79c0b"></use></mask><g fill-rule="nonzero" mask="url(#f94b451435b3a97a03f35aa6ed7b79c0c)" fill="#000"><use filter="url(#f94b451435b3a97a03f35aa6ed7b79c0d)" xlink:href="#f94b451435b3a97a03f35aa6ed7b79c0e"></use></g></g></svg>
-                        <div class="static-avatar" style="background: url('${getStudentInfo()?.avatar}') no-repeat center; background-size: cover"></div>
-                    </div>
-                    <div class="user-info" style="padding: 28px">
-                        <p style="font-size: 28px; color: #1d1d1f; font-weight: bold; margin: 0;">${getStudentInfo()?.name}</p>
-                        <p style="font-size: 16px; color: black; opacity: 0.7;">${getStudentInfo()?.email}</p>
-                    </div>
-                </div>
-                <div class="std-welcome-container">
-                    <div style="position: absolute; width: 70%; padding: 60px">
-                        <h1 style="margin: 0; font-size: 30px">Welcome back, ${getStudentInfo()?.name}!</h1>
-                        <p style="font-size: 18px; color: #4f4f4f">Welcome back to the student portal! It's great to have you here again. Let's continue your educational journey and achieve your goals together. Hope you have a nice day!</p>
-                    </div>
-                    <div style="display: flex; width: 100%; height: 100%; justify-content: flex-end">
-                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/graphic-design-5690847-4759147.png" width="310px" />
-                    </div>
-                </div>
-            `;
+            const quote = `Welcome back to the student portal! It's great to have you here again. Let's continue your educational journey and achieve your goals together. Hope you have a nice day!`;
+            const svgAvatarFrame = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185 196" aria-hidden="true" class="profile-background"><defs><path id="f94b451435b3a97a03f35aa6ed7b79c0b" d="M0 0h185v196H0z"></path><path d="M133.685 175C162.38 175 185 153.618 185 127.246c0-19.838-11.668-36.944-29.884-45.021C154.997 40.173 124.636 10 85.823 10c-25.36 0-43.575 13.305-55.243 29.341-23.336-6.058-48.457 11.285-49.172 37.776C-40.022 80.917-53 100.28-53 123.327c0 27.796 24.526 51.554 57.149 51.554l129.536.119z" id="f94b451435b3a97a03f35aa6ed7b79c0e"></path><linearGradient x1="19.823%" y1="45.17%" x2="-1.128%" y2="45.17%" id="f94b451435b3a97a03f35aa6ed7b79c0a"><stop stop-color="#FFF" offset="0%"></stop><stop stop-color="#FFF" stop-opacity="0" offset="100%"></stop></linearGradient><filter x="-4.6%" y="-6.7%" width="109.2%" height="113.3%" filterUnits="objectBoundingBox" id="f94b451435b3a97a03f35aa6ed7b79c0d"><feGaussianBlur stdDeviation="6.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur><feOffset dy="9" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.133002328 0" in="shadowInnerInner1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><mask id="f94b451435b3a97a03f35aa6ed7b79c0c" fill="url(#f94b451435b3a97a03f35aa6ed7b79c0a)"><use xlink:href="#f94b451435b3a97a03f35aa6ed7b79c0b"></use></mask><g fill-rule="nonzero" mask="url(#f94b451435b3a97a03f35aa6ed7b79c0c)" fill="#000"><use filter="url(#f94b451435b3a97a03f35aa6ed7b79c0d)" xlink:href="#f94b451435b3a97a03f35aa6ed7b79c0e"></use></g></g></svg>`;
+            const staticImage = createElement("div", { class: "static-avatar", style: `background: url('${getStudentInfo()?.avatar}') no-repeat center; background-size: cover` });
+            const profileAvatar = createElement("div", { class: "profile-avatar", style: "top: 30px" });
+            profileAvatar.innerHTML = svgAvatarFrame;
+            prependElementToDOM(profileAvatar, staticImage);
+            const userInfo = createElement("div", { class: "user-info", style: "padding: 28px" }, [
+                createElement("p", { style: "font-size: 28px; color: #1d1d1f; font-weight: bold; margin: 0;" }, getStudentInfo()?.name),
+                createElement("p", { style: "font-size: 16px; color: black; opacity: 0.7;" }, getStudentInfo()?.email),
+            ]);
+            const avatarCard = createElement("div", { class: "std-info-card" }, [profileAvatar, userInfo]);
+            const welcomeText = createElement("div", { style: "position: absolute; width: 70%; padding: 60px" }, [
+                createElement("h1", { style: "margin: 0; font-size: 30px" }, `Welcome back, ${getStudentInfo()?.name}!`),
+                createElement("p", { style: "font-size: 18px; color: #4f4f4f" }, quote),
+            ]);
+            const graphic3DImage = createElement("img", { src: "https://cdn3d.iconscout.com/3d/premium/thumb/graphic-design-5690847-4759147.png", width: "310px" }, null);
+            const graphicWrapper = createElement("div", { style: "display: flex; width: 100%; height: 100%; justify-content: flex-end" }, graphic3DImage);
+            const welcomeContainer = createElement("div", { class: "std-welcome-container" }, [graphicWrapper, welcomeText]);
+            const subHeader = createElement("div", { id: "std-sub-header" }, [avatarCard, welcomeContainer]);
+            setStyleForElement(subHeader, {
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: "40px",
+                padding: "40px",
+            });
             insertElementToDOM(mainContainer, subHeader);
             menuSections.map((section) => {
                 const title = createElement("p", { style: "color: white; font-size: 26px; font-weight: bold; margin: 0; margin-bottom: 10px" }, section.sectionName);
@@ -305,7 +329,7 @@
             if (!mainWrapper) return;
             isAccessibleInstallElement({ tagName: "div", id: "std-background" }, function (err, backgroundElement) {
                 if (err) return;
-                const bgURL = "https://e0.pxfuel.com/wallpapers/363/323/desktop-wallpaper-macos-monterey-stock-blue-light-layers-gradients-blue-and-green.jpg";
+                const bgURL = backgroundImageRandom();
                 setStyleForElement(backgroundElement, { background: `url(${bgURL})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" });
                 insertElementToDOM(mainWrapper, backgroundElement);
             });
