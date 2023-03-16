@@ -218,7 +218,7 @@
     const installHeader = function () {
         const mainWrapper = document.querySelector("div#std-main-wrapper");
         if (!mainWrapper) return;
-        isAccessibleInstallElement({ tagName: "header", id: "std-header" }, function (error, header) {
+        isAccessibleInstallElement({ tagName: "header", id: "std-header" }, function (error, headerElement) {
             if (error) return;
             const signOutButton = createElement("a", { class: "std-sign-out-button", href: "https://stdportal.tdtu.edu.vn/Login/SignOut" }, "Sign Out");
             const headerTitle = createElement("p", { class: "header-title" }, "Ton Duc Thang University Student Portal");
